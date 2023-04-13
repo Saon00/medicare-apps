@@ -1,12 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyTextFields extends StatelessWidget {
-  const MyTextFields({Key? key}) : super(key: key);
+  final String introText;
+  final String? hintText;
+  final bool? obscure;
+  const MyTextFields({
+    Key? key,
+    required this.introText,
+    this.hintText,
+    this.obscure,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      
-    );
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Text(introText, style: GoogleFonts.jost(fontSize: 20)),
+      const SizedBox(height: 10),
+      TextField(
+        obscureText: obscure ?? false,
+        decoration: InputDecoration(
+            hintText: hintText ?? '',
+            hintStyle: GoogleFonts.quicksand(),
+            fillColor: Colors.green.shade100,
+            filled: true,
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
+      ),
+    ]);
   }
 }
