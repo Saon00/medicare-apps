@@ -53,6 +53,18 @@ class _LoginPageState extends State<LoginPage> {
               introText: 'Your password',
               obscure: true,
             ),
+
+            // forgot password
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Text("forgot password!!",
+                        style: GoogleFonts.comfortaa(
+                            color: Colors.blue.shade400))),
+              ],
+            ),
             const SizedBox(height: 30),
 
             // login button
