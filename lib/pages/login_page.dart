@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                 Text("MediCare", style: GoogleFonts.comfortaa(fontSize: 30)),
               ],
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 60),
 
             // email part
             const MyTextFields(
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               hintText: 'abc@email.com',
             ),
 
-            const SizedBox(height: 30),
+            const SizedBox(height: 5),
 
             // password part
             const MyTextFields(
@@ -60,17 +60,38 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 TextButton(
                     onPressed: () {},
-                    child: Text("forgot password!!",
+                    child: Text("forgot password !!",
                         style: GoogleFonts.comfortaa(
                             color: Colors.blue.shade400))),
               ],
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
 
             // login button
             const MyButton(
                 text: 'Login',
-                icon: Icon(Icons.arrow_forward_ios_rounded, size: 20))
+                icon: Icon(Icons.arrow_forward_ios_rounded, size: 20)),
+            const SizedBox(height: 20),
+
+            Row(
+              children: [
+                const Expanded(
+                  child: Divider(
+                    thickness: 1,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Text("Need an account ??",
+                      style: GoogleFonts.comfortaa(color: Colors.grey)),
+                ),
+                const Expanded(
+                  child: Divider(
+                    thickness: 1,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       )),
