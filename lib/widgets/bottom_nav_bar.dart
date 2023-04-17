@@ -2,6 +2,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalthemeapp/utils/colors.dart';
 
+import '../utils/user_profile_bar.dart';
+
 class MainBottomNavBar extends StatefulWidget {
   const MainBottomNavBar({Key? key}) : super(key: key);
 
@@ -27,10 +29,12 @@ class _MainBottomNavBarState extends State<MainBottomNavBar> {
         backgroundColor: CustomsColors.backgroundColor,
         animationDuration: const Duration(milliseconds: 300),
         items: const [
-          Icon(Icons.home_max_outlined),
+          Icon(
+            Icons.home_max_outlined,
+          ),
           Icon(Icons.calendar_month_sharp),
           Icon(Icons.message_outlined),
-          Icon(Icons.settings),
+          Icon(Icons.person_2_rounded),
         ],
         onTap: (index) {
           setState(() {
@@ -38,8 +42,13 @@ class _MainBottomNavBarState extends State<MainBottomNavBar> {
           });
         },
       ),
-      body: Center(
-        child: _list[_selectIndex],
+      body: SafeArea(
+        child: Column(
+          children: [
+            const UserProfilebar(),
+            Expanded(child: _list[_selectIndex])
+          ],
+        ),
       ),
     );
   }

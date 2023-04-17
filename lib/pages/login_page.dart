@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medicalthemeapp/pages/signup_page.dart';
 import 'package:medicalthemeapp/utils/colors.dart';
+import 'package:medicalthemeapp/widgets/bottom_nav_bar.dart';
 
 import '../utils/buttons.dart';
 import '../utils/square_box.dart';
@@ -75,7 +77,14 @@ class _LoginPageState extends State<LoginPage> {
                 // login button
                 MyButton(
                   text: 'Login',
-                  ontap: () {},
+                  ontap: () {
+                    setState(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainBottomNavBar()));
+                    });
+                  },
                 ),
                 const SizedBox(height: 20),
 
@@ -119,11 +128,20 @@ class _LoginPageState extends State<LoginPage> {
                         style: GoogleFonts.comfortaa(color: Colors.black38)),
                     // const SizedBox(width: 5),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          setState(() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignUpPage()));
+                          });
+                        });
+                      },
                       child: Text('Be our Member',
                           style: GoogleFonts.comfortaa(
                               color: Colors.blue.shade400)),
-                    )
+                    ),
                   ],
                 )
               ],

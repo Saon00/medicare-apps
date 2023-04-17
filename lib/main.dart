@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicalthemeapp/pages/signup_page.dart';
+import 'package:medicalthemeapp/pages/login_page.dart';
 
 void main() => runApp(const MaterialApp(
       home: MyApp(),
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SignUpPage(),
+      body: LoginPage(),
     );
   }
 }
