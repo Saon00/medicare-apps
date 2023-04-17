@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medicalthemeapp/utils/buttons.dart';
 import 'package:medicalthemeapp/utils/textform.dart';
 
 import '../utils/colors.dart';
@@ -85,6 +86,7 @@ class _SignUpPageState extends State<SignUpPage> {
             //     style: const TextStyle(color: Colors.black, fontSize: 20)),
 
             // sign up button
+            const MyButton(text: 'Continue'),
 
             // already have account
           ],

@@ -3,11 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyButton extends StatelessWidget {
   final String text;
-  final Icon icon;
   const MyButton({
     Key? key,
     required this.text,
-    required this.icon,
   }) : super(key: key);
 
   @override
@@ -22,7 +20,6 @@ class MyButton extends StatelessWidget {
             children: [
               Text(text),
               const SizedBox(width: 20),
-              icon,
             ],
           ),
           style: ElevatedButton.styleFrom(
