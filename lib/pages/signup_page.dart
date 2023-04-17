@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medicalthemeapp/utils/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:medicalthemeapp/utils/textform.dart';
+
+import '../utils/colors.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -9,17 +12,27 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  final DateTime? _dateTime = DateTime.now();
+  DateTime? _selectedDate = DateTime.now();
 
-  void _showDatePicker() {
+  //Method for showing the date picker
+  void _pickDateDialog() {
     showDatePicker(
             context: context,
             initialDate: DateTime.now(),
-            firstDate: DateTime(1990),
-            lastDate: DateTime(2025))
-        .then((value) {
+            //which date will display when user open the picker
+            firstDate: DateTime(1950),
+            //what will be the previous supported year in picker
+            lastDate: DateTime
+                .now()) //what will be the up to supported date in picker
+        .then((pickedDate) {
+      //then usually do the future job
+      if (pickedDate == null) {
+        //if user tap cancel then this function will stop
+        return;
+      }
       setState(() {
-        value = _dateTime!; 
+        //for rebuilding the ui
+        _selectedDate = pickedDate;
       });
     });
   }
@@ -32,27 +45,44 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // sign up text
+            Text('Sign up ', style: GoogleFonts.poppins(fontSize: 40)),
+            const SizedBox(height: 30),
 
             // email section
+            const MyTextFields(
+              introText: 'Enter your Email',
+              hintText: "abc@gmail.com",
+              textInputType: TextInputType.emailAddress,
+            ),
+            const SizedBox(height: 15),
 
             // password section
+            const MyTextFields(introText: 'Enter your password', obscure: true),
+            const SizedBox(height: 15),
 
             // mobile number section
-            Text(_dateTime.toString(),
-                style: const TextStyle(color: Colors.black, fontSize: 20)),
+            const MyTextFields(
+              introText: 'Enter Mobile Number',
+              hintText: '01xxxxxxxxx',
+              textInputType: TextInputType.number,
+            ),
+            const SizedBox(height: 15),
 
             // date of birth section
-            ElevatedButton(
-              onPressed: _showDatePicker,
-              child: const Padding(
-                padding: EdgeInsets.all(6),
-                child: Text("Select your birthday"),
-              ),
-            ),
+            // ElevatedButton(
+            //   onPressed: _pickDateDialog,
+            //   child: const Padding(
+            //     padding: EdgeInsets.all(6),
+            //     child: Text("Select your birthday"),
+            //   ),
+            // ),
+
+            // Text(_selectedDate.toString(),
+            //     style: const TextStyle(color: Colors.black, fontSize: 20)),
 
             // sign up button
 

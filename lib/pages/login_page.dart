@@ -74,8 +74,9 @@ class _LoginPageState extends State<LoginPage> {
 
                 // login button
                 const MyButton(
-                    text: 'Login',
-                    icon: Icon(Icons.arrow_forward_ios_rounded, size: 20)),
+                  text: 'Login',
+                  icon: Icon(Icons.arrow_forward_ios_rounded, size: 20),
+                ),
                 const SizedBox(height: 20),
 
                 Row(
