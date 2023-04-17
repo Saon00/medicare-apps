@@ -86,7 +86,7 @@ class _SignUpPageState extends State<SignUpPage> {
             //     style: const TextStyle(color: Colors.black, fontSize: 20)),
 
             // sign up button
-            const MyButton(text: 'Continue'),
+            MyButton(text: 'Continue', ontap: () {}),
 
             // already have account
           ],

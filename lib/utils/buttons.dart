@@ -3,9 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyButton extends StatelessWidget {
   final String text;
+  final VoidCallback ontap;
   const MyButton({
     Key? key,
-    required this.text,
+    required this.text, required this.ontap,
   }) : super(key: key);
 
   @override
@@ -14,7 +15,7 @@ class MyButton extends StatelessWidget {
       height: 40,
       width: double.infinity,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: ontap,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
