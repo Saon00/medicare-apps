@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:medicalthemeapp/pages/home_page.dart';
 import 'package:medicalthemeapp/utils/colors.dart';
 
 import '../utils/user_profile_bar.dart';
@@ -15,7 +16,7 @@ class _MainBottomNavBarState extends State<MainBottomNavBar> {
   var _selectIndex = 0;
 
   final List<Widget> _list = [
-    const Text("01"),
+    const HomePage(),
     const Text("02"),
     const Text("03"),
     const Text("04"),
