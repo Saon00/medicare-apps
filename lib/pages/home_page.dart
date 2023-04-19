@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 hintStyle: GoogleFonts.ubuntu(color: Colors.grey),
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 25),
 
             // categories
             Text("Category", style: GoogleFonts.poppins(fontSize: 20)),
@@ -46,52 +46,141 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   CategoryWidgets(
                       categoryName: 'Heart',
-                      imagePath: 'assets/heart.png',
+                      imagePath: 'assets/categoryIcons/heart.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Eye',
-                      imagePath: 'assets/eye.png',
+                      imagePath: 'assets/categoryIcons/eye.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Dental',
-                      imagePath: 'assets/teeth.png',
+                      imagePath: 'assets/categoryIcons/teeth.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Blood',
-                      imagePath: 'assets/blood.png',
+                      imagePath: 'assets/categoryIcons/blood.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Medicine',
-                      imagePath: 'assets/caduceus.png',
+                      imagePath: 'assets/categoryIcons/caduceus.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Brain',
-                      imagePath: 'assets/brain.png',
+                      imagePath: 'assets/categoryIcons/brain.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Nose',
-                      imagePath: 'assets/nose.png',
+                      imagePath: 'assets/categoryIcons/nose.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Pregnancy',
-                      imagePath: 'assets/pregnant.png',
+                      imagePath: 'assets/categoryIcons/pregnant.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                   CategoryWidgets(
                       categoryName: 'Stomach',
-                      imagePath: 'assets/stomach.png',
+                      imagePath: 'assets/categoryIcons/stomach.png',
                       ontap: () {}),
                   const SizedBox(width: 20),
                 ],
               ),
-            )
+            ),
+
+            const SizedBox(height: 25),
+
+            // top doctors
+            Text("Top Doctors", style: GoogleFonts.poppins(fontSize: 20)),
+            const SizedBox(height: 5),
+            SingleChildScrollView(
+              child: Row(children: [
+                GestureDetector(
+                  child: Container(
+                    color: Colors.white,
+                    height: 150,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // rating
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow.shade700,
+                                    size: 20,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow.shade700,
+                                    size: 20,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow.shade700,
+                                    size: 20,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow.shade700,
+                                    size: 20,
+                                  ),
+                                  Icon(
+                                    Icons.star_half,
+                                    color: Colors.yellow.shade700,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    "4.5",
+                                    style: GoogleFonts.poppins(fontSize: 15),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(height: 5),
+
+                              // name
+                              Text('Dr. FirstName',
+                                  style: GoogleFonts.ubuntu(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                              Text('LastName',
+                                  style: GoogleFonts.ubuntu(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                              const SizedBox(height: 10),
+
+                              //category icon & name
+                              Row(
+                                children: [
+                                  Image.asset("assets/categoryIcons/heart.png",
+                                      height: 20),
+                                  const SizedBox(width: 5),
+                                  Text(
+                                    'Heart',
+                                    style: GoogleFonts.ubuntu(fontSize: 17),
+                                  )
+                                ],
+                              )
+                              // button
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ]),
+            ),
           ],
         ),
       ),
